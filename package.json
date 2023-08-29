@@ -1,0 +1,19 @@
+{
+  "name": "cordova.nta.viettel.sdk.plugin",
+  "version": "0.0.1",
+  "description": "Implement Ionic Plugin for Viettel SDK",
+  "cordova": {
+    "id": "cordova.nta.viettel.sdk.plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "\"NguyenTaiAnh (NTA)",
+  "license": "ISC"
+}

@@ -1,0 +1,4 @@
+framework module GoSignSDKLite {
+  header "GoSignSDKLite-Swift.h"
+  requires objc
+}

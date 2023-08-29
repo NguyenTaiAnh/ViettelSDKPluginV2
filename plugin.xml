@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.nta.viettel.sdk.plugin" version="0.0.1"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>ViettelSDKPlugin</name>
+	<js-module name="ViettelSDKPlugin" src="www/ViettelSDKPlugin.js">
+		<clobbers target="cordova.plugins.ViettelSDKPlugin" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="ViettelSDKPlugin">
+				<param name="android-package" value="cordova.nta.viettel.sdk.plugin.ViettelSDKPlugin" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<source-file src="src/android/ViettelSDKPlugin.java" target-dir="src/cordova/nta/viettel/sdk/plugin/ViettelSDKPlugin" />
+        <resource-file src="libs/GosignSDKCompact.aar" target="libs/GosignSDKCompact.aar" />
+        <framework src="src/android/viettel-sdk.gradle" custom="true" type="gradleReference"/>
+    </platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="ViettelSDKPlugin">
+				<param name="ios-package" value="ViettelSDKPlugin" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/ViettelSDKPlugin.swift" />
+        <framework custom="true" src="src/ios/Alamofire.xcframework" embed="true" />
+        <!-- <framework custom="true" src="src/ios/GoSignSDK.xcframework" embed="true" /> -->
+        <framework custom="true" src="src/ios/GoSignSDKLite.xcframework" embed="true" />
+        <framework custom="true" src="src/ios/KeychainSwift.xcframework" embed="true" />
+        <framework custom="true" src="src/ios/Moya.xcframework" embed="true" />
+	</platform>
+</plugin>
